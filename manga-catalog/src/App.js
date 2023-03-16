@@ -1,13 +1,25 @@
-import React from "react";
-import api from "./data/api";
+  import React, { useEffect } from "react";
+  import Mdb from "./mangadb.js"; // Mdb is mangaDatabase
 
-const response = async () => { await api.get('/filmes') }
+  export default () => {
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-}
+    useEffect(() => {
+      const fullRender = async () => {
+      const inventory = await Mdb.getMangaList();
+      console.log(inventory);
+      };
 
-export default App;
+      fullRender();
+    }, []);
+
+    return (  
+      <header>
+        
+      </header>
+    )
+  };
+
+
+
+
+

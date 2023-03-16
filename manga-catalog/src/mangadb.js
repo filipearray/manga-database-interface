@@ -1,62 +1,56 @@
-const mangaDb = "../src/data/mangadb.json";
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = 'http://localhost:3000';
 
-async function basicFetch(endpoint) {
+async function concatFetch(endpoint) {
   const req = await fetch(`${BASE_URL}${endpoint}`);
-  const json = await res.json();
-  req.json();
+  const json = await req.json();
+  return json;
 }
 
-const mangaDatabase = {
-  getMangaDb: async () => {
-    return [
-        {
-            SEOfriendly: 'toprated', // SEOfriendly is like a slug.
-            title: 'Top Rated',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'trending',
-            title: 'Trending',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'action',
-            title: 'Action',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'drama', 
-            title: 'Drama',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'sports', 
-            title: 'Sports',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'comedy',
-            title: 'Comedy',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'awardwinning', 
-            title: 'Award Winning',
-            mangaItems: await basicFetch()
-        },
-        {
-            SEOfriendly: 'ongoing',
-            title: 'Ongoing',
-            mangaItems: await basicFetch()
-        },
-];
-  },
+const Mdb = {
+    getMangaList: async () => {
+        return [
+            {
+                SEOfriendly: 'toprated', // SEOfriendly is like a slug.
+                title: 'Top Rated',
+                mangaItems: await concatFetch('/manga/toprated')
+            },
+            {
+                SEOfriendly: 'trending',
+                title: 'Trending',
+                mangaItems: await concatFetch('/manga/trending')
+            },
+            {
+                SEOfriendly: 'action',
+                title: 'Action',
+                mangaItems: await concatFetch('/manga/action')
+            },
+            {
+                SEOfriendly: 'drama', 
+                title: 'Drama',
+                mangaItems: await concatFetch('/manga/drama')
+            },
+            {
+                SEOfriendly: 'sports', 
+                title: 'Sports',
+                mangaItems: await concatFetch('/manga/sports')
+            },
+            {
+                SEOfriendly: 'comedy',
+                title: 'Comedy',
+                mangaItems: await concatFetch('/manga/comedy')
+            },
+            {
+                SEOfriendly: 'awardwinning', 
+                title: 'Award Winning',
+                mangaItems: await concatFetch('/manga/awardwinning')
+            },
+            {
+                SEOfriendly: 'ongoing',
+                title: 'Ongoing',
+                mangaItems: await concatFetch('/manga/ongoing')
+            },
+    ];
+      }
 };
 
-export default mangaDatabase
-
-/* fetch(mangaDb)
-    .then(res => {
-        console.log(res.json())
-    }) */
+export default Mdb;

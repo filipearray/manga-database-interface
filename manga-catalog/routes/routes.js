@@ -2,6 +2,9 @@ const { Router } = require('express');
 const mangaController = require('../controllers/mangaControllers');
 
 const router = Router();
+const cors = require('cors');
+
+router.use(cors());
 
 router.get('/manga', mangaController.getManga);
 router.get('/manga/toprated', mangaController.getTopRatedManga);
