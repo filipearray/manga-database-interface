@@ -1,46 +1,43 @@
-    import React, { useEffect, useState } from "react";
-    import Mdb from "./mangadb.js"; // Mdb is mangaDatabase
-    import MangaRow from "./components/MangaRow.js";
-    import FeaturedManga from "./components/FeaturedManga.js";
-    import "./App.css"
+import React, { useEffect, useState } from "react";
+import Mdb from "./data/mangadb.js"; // Mdb is mangaDatabase.
+import MangaRow from "./components/manga-row/MangaRow";
+import PrincipalManga from "./components/principal-manga/PrincipalManga";
+import "./App.css";
 
+export default () => {
+  const [mangaList, setMangaList] = useState([]);
+  const [principalData, setPrincipalData] = useState(null);
 
-    export default () => {
+  useEffect(() => {
+    const fullRender = async () => {
+      let inventory = await Mdb.getMangaList();
+      setMangaList(inventory); // The mangaList received an empty array to start with, and there will be a function called setMangaList that will start receiving the array with the manga database.
 
-      const [mangaList, setMangaList] = useState([]);
-      const [featuredData, setFeaturedData] = useState(null)
-
-      useEffect(() => {
-        const fullRender = async () => {
-        let inventory = await Mdb.getMangaList();
-        setMangaList(inventory); // O mangaList recebeu um array vazio pra começar, e vai ter uma função chamada setMangaList que vai começar recebendo o array com o banco de dados de mangás.
-
-        // Pegando o Featured
-        let topRatedManga = inventory.filter(index => index.SEOfriendly === 'toprated')
-        // Pegando um mangá aleatório
-        let randomManga = Math.floor(Math.random() * (topRatedManga[0].mangaItems.length))
-        let chosenRandomManga = topRatedManga[0].mangaItems[randomManga];
-        setFeaturedData(chosenRandomManga);  
-        };  
-
-        fullRender();
-      }, []); 
-
-      return (  // Vamos fazer um loop pois todos são iguais estruturalmente.
-        <div className="page">
-
-        {featuredData && <FeaturedManga item={featuredData} />}
-
-          <section className="lists">
-            {mangaList.map((item, key) => (
-              <MangaRow key={key} title={item.title} items={item.mangaItems} />
-            ))} 
-          </section>
-        </div>
-      )
+      // Getting the principal manga.
+      let topRatedManga = inventory.filter(
+        (index) => index.SEOfriendly === "toprated"
+      );
+      // Getting a random manga.
+      let randomManga = Math.floor(
+        Math.random() * topRatedManga[0].mangaItems.length
+      );
+      let chosenRandomManga = topRatedManga[0].mangaItems[randomManga];
+      setPrincipalData(chosenRandomManga);
     };
 
+    fullRender();
+  }, []);
 
+  return (
+    // Let's make a loop because they are all the same structurally.
+    <div className="page">
+      {principalData && <PrincipalManga item={principalData} />}
 
-
-
+      <section className="lists">
+        {mangaList.map((item, key) => (
+          <MangaRow key={key} title={item.title} items={item.mangaItems} />
+        ))}
+      </section>
+    </div>
+  );
+};

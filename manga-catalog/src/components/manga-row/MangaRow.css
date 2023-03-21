@@ -1,0 +1,32 @@
+.movieRow {
+  margin-bottom: 30px;
+}
+
+.movieRow h2 {
+  margin: 0px 0px 0px 30px; /* top, right, bottom, left (TRBL) */
+}
+
+.movieRow-listarea {
+  overflow-x: hidden; /* Anything that crosses the screen horizontally will be clipped. */
+  padding-left: 30px;
+}
+
+.movieRow-item {
+  display: inline-block; /* Make them side by side. */
+  width: 150px; /* Each image will be 150px. */
+  cursor: pointer;
+}
+
+.movieRow-item img {
+  width: 100%; /* That is, 100% of 150px is 150px, each img will be 150px. */
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+}
+
+.movieRow-item img:hover {
+  transform: scale(1);
+}
+
+.movieRow-list {
+  width: 9999px;
+}
