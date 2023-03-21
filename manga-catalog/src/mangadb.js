@@ -15,11 +15,6 @@ const Mdb = {
                 mangaItems: await concatFetch('/manga/toprated')
             },
             {
-                SEOfriendly: 'trending',
-                title: 'Trending',
-                mangaItems: await concatFetch('/manga/trending')
-            },
-            {
                 SEOfriendly: 'action',
                 title: 'Action',
                 mangaItems: await concatFetch('/manga/action')
@@ -40,6 +35,11 @@ const Mdb = {
                 mangaItems: await concatFetch('/manga/comedy')
             },
             {
+                SEOfriendly: 'trending',
+                title: 'Trending',
+                mangaItems: await concatFetch('/manga/trending')
+            },
+            {
                 SEOfriendly: 'awardwinning', 
                 title: 'Award Winning',
                 mangaItems: await concatFetch('/manga/awardwinning')
@@ -50,7 +50,7 @@ const Mdb = {
                 mangaItems: await concatFetch('/manga/ongoing')
             },
     ];
-      }
+      },     
 };
 
 export default Mdb;

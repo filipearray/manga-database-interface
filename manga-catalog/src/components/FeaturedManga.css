@@ -1,0 +1,88 @@
+.featured{ /* Vai ter TODO o tamanho da tela (VH) */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.featured--vertical{
+    width: inherit; /* herda o tamanho do elemento pai */
+    height: inherit;
+    background: linear-gradient(to top, black 10%, transparent 90%);
+} /* Gradiente preto pra imagem vertical */
+
+.featured--horizontal{
+    width: inherit; /* herda o tamanho do elemento pai */
+    height: inherit;
+    background: linear-gradient(to right, black 30%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 200px;
+} /* Gradiente preto pra imagem horizontal */
+
+.featured--name{
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.featured--info{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.featured--points{
+    display: inline-block;
+    color: #46d369;
+    margin-right: 15px;
+}
+
+.featured--year{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.featured--description{
+    margin-top: 15px;
+    font-size: 17px;
+    color: #999;
+    max-width: 40%;
+}
+
+.featured--buttons{
+    margin-top: 15px;
+}
+
+.featured--watchbutton, .featured--mylistbutton{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2s
+}
+
+.featured--watchbutton{
+    background-color: white;
+    color: #333;
+}
+
+.featured--mylistbutton{
+    background-color: #333;
+    color: white;
+}
+
+.featured--watchbutton:hover, .featured--mylistbutton:hover{
+    opacity: 0.7;
+}
+
+.featured--genres{
+    margin-top: 15px;
+    font-size: 18px;
+    color: #999;
+    font-weight: 800;
+}
