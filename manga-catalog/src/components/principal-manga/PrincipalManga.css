@@ -1,63 +1,103 @@
-.featured {
+.featured{
   /* Will get FULL screen size (VH) */
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background-size: 700px;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 10px;  
+  height: 100vh; 
+  user-select: none;
 }
+
 
 .featured-vertical {
   width: inherit; /* Inherits size from parent element. */
   height: inherit;
-  background: linear-gradient(to top, black 10%, transparent 90%);
+  background: linear-gradient(to top, #0F0F0F 10%, transparent 70%);
 } /* Black gradient for vertical image. */
 
-.featured-horizontal {
-  width: inherit; /* Inherits size from parent element. */
+.featured-horizontal{
+  width: inherit;
   height: inherit;
-  background: linear-gradient(to right, black 30%, transparent 70%);
+  background: linear-gradient(to right, #0F0F0F 30%, transparent 70%);
+ /* HERE CUSTOM
+ filter: brightness(150%);*/
+}
+
+.featured-2-horizontal{
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to left, #0F0F0F 30%, transparent 70%);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 30px;
-  padding-bottom: 200px;
-} /* Black gradient for horizontal image. */
+  align-items: center;
+}
 
 .featured-name {
   font-size: 60px;
   font-weight: 900;
-}
-
-.featured-info {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-.featured-points {
-  display: inline-block;
-  color: #46d369;
-  margin-right: 15px;
-}
-
-.featured-year {
-  display: inline-block;
-  margin-right: 15px;
+  margin-top: auto;
 }
 
 .featured-description {
-  margin-top: 15px;
   font-size: 17px;
   color: #999;
-  max-width: 40%;
+  max-width: 30%; 
+  margin-bottom: 120px;
+  margin-top: 30px;
+  text-align: justify;
+  font-weight: 700;
 }
 
-.featured-buttons {
+
+.featured-points {
+  color: #46d369; 
+  font-size: 50px;
+  font-weight: 900;
   margin-top: 15px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+  margin-left: 150px;
+}
+
+.featured-year {
+  font-size: 50px;
+  font-weight: 900;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 100px;
+  margin-right: 150px;
+  font-size: 50px;
+  color: rgb(117, 48, 48);
+}
+
+.featured-demographic{
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 200px;
+  margin-right: 150px;  
+  font-size: 35px;  
+  font-weight: 900;
+}
+
+.featured-author{
+  top: 0;
+  left: 0;
+  position: absolute;  
+  font-size: 35px;
+  font-weight: 900; 
+  margin-top: 200px;
+  margin-left: 150px;
 }
 
 .featured-watchbutton,
 .featured-mylistbutton {
-  display: inline-block;
   font-size: 20px;
   font-weight: 700;
   padding: 12px 25px;
@@ -71,11 +111,65 @@
 .featured-watchbutton {
   background-color: white;
   color: #333;
+  top: 0;
+  left: 0;
+  position: absolute; 
+  margin-top: 300px;
+  margin-left: 150px;
+}
+
+.featured-chapters{
+  top: 0;
+  left: 0;
+  position: absolute; 
+  margin-top: 400px;
+  margin-left: 150px;
+  font-size: 23px;
+  font-weight: 900;
+  color: #999;
+}
+
+.featured-vol{
+  top: 0;
+  left: 0;
+  position: absolute; 
+  margin-top: 450px;
+  margin-left: 150px;
+  font-size: 23px;
+  font-weight: 900;
+  color: #999;
 }
 
 .featured-mylistbutton {
   background-color: #333;
   color: white;
+  top: 0;
+  right: 0;
+  position: absolute; 
+  margin-top: 300px;
+  margin-right: 150px;
+}
+
+.featured-members{
+  top: 0;
+  right: 0;
+  position: absolute; 
+  margin-top: 400px;
+  margin-right: 150px;
+  font-size: 23px;
+  font-weight: 900;
+  color: #999;
+}
+
+.featured-serialization{
+  top: 0;
+  right: 0;
+  position: absolute; 
+  margin-top: 450px;
+  margin-right: 150px;
+  font-size: 23px;
+  font-weight: 900;
+  color: #999;
 }
 
 .featured-watchbutton:hover,
@@ -86,6 +180,26 @@
 .featured-genres {
   margin-top: 15px;
   font-size: 18px;
-  color: #999;
+  color: #b1afaf;
   font-weight: 800;
+}
+
+.separator{
+  border-left: 3px solid #777;
+  height: 40%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 105px;
+  margin-left: 100px;
+}
+
+.separator2{
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: 40%;
+  border-left: 3px solid #777;
+  margin-top: 105px;
+  margin-right: 100px;
 }
