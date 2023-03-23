@@ -38,6 +38,10 @@ export default () => {
           <MangaRow key={key} title={item.title} items={item.mangaItems} />
         ))}
       </section>
+
+      <footer>
+      Developed by <a href="https://github.com/filipearray" target="_blank">Filipe Guimarães</a>
+      </footer>
     </div>
   );
 };

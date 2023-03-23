@@ -1,5 +1,6 @@
 .movieRow {
   margin-bottom: 30px;
+  user-select: none;
 }
 
 .movieRow h2 {
@@ -21,13 +22,42 @@
   width: 100%; /* That is, 100% of 150px is 150px, each img will be 150px. */
   transform: scale(0.9);
   transition: all ease 0.2s;
-  max-height: 200px;
+  height: 200px;
 }
 
 .movieRow-item img:hover {
   transform: scale(1);
 }
 
-.movieRow-list {
-  width: 9999px;
+.movieRowLeft, .movieRowRight{
+  position: absolute;
+  width: 40px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.movieRow:hover .movieRowLeft,
+.movieRow:hover .movieRowRight{
+  opacity: 1;
+}
+
+
+.movieRowLeft{
+  left: 0;
+}
+
+.movieRowRight{
+  right: 0;
+}
+
+.movieRow-list{
+  transition: all ease 0.5s;
 }
